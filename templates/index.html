@@ -23,7 +23,7 @@
     </header>
 
     <section class="input-form-section">
-      <form action="#">
+      <form action=" {{url_for('get_data_from_form')}} " method="post">
         <textarea
           name="input"
           id="input"
@@ -35,6 +35,8 @@
         <input type="submit" class="submit" value="Submit" />
       </form>
     </section>
+
+    <div>{{result}}</div>
 
     <section class="results-section">
       <h4>Toxicity Rating: 35%</h4>
