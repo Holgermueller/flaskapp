@@ -37,35 +37,20 @@ body {
   color: #f2f2f2;
   cursor: pointer;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.progress-bar__container {
-  width: 80%;
-  height: 2rem;
-  border-radius: 2rem;
+.progress-background {
+  background-color: #fafafa;
+  margin: 10px auto;
   position: relative;
-  overflow: hidden;
-  transition: all 0.5s;
-  will-change: transform;
-  box-shadow: 0 0 5px #e76f51;
+  border-radius: 5px;
+  height: 25px;
 }
-.progress-bar {
-  position: absolute;
+.progress {
   height: 100%;
-  width: 100%;
-  content: "";
-  background-color: #e76f51;
-  top: 0;
-  bottom: 0;
-  left: -100%;
-  border-radius: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #33b2ff;
+  width: 35%;
+  height: 25px;
 }
 footer {
   border: 1px solid #696969;
