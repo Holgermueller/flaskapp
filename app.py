@@ -11,7 +11,7 @@ def hello():
 def get_data_from_form():
     if request.method == 'POST':
         result = request.form
-        return result
+        return render_template('index.html', result=result)
 
 
 
