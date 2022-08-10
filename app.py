@@ -32,6 +32,8 @@ def get_data_from_form():
         static_discovery=False,
         )
 
+        comment_to_rate = request.form
+
         analyze_request = {
             'comment': {'text': 'request.form'},
             'requestedAttributes': {'TOXICITY': {}}
@@ -45,7 +47,7 @@ def get_data_from_form():
         result_to_percentage = result_from_json * 100
 
        
-        return render_template('index.html', result=result_to_percentage)
+        return render_template('index.html', result=result_to_percentage, comment_to_rate=comment_to_rate)
 
 
 
