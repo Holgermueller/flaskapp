@@ -1,11 +1,9 @@
-from http.client import ResponseNotReady
-from unittest import result
-from urllib import request
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import os
 from googleapiclient import discovery
 import json
+import math
 
 app = Flask(__name__)
 
@@ -33,10 +31,19 @@ def get_data_from_form():
         )
 
         comment_to_rate = request.form
+        print(request.form)
+        print(comment_to_rate)
 
         analyze_request = {
-            'comment': {'text': 'request.form'},
-            'requestedAttributes': {'TOXICITY': {}}
+            'comment': {'text': 'comment_to_rate'},
+            'requestedAttributes': {'TOXICITY': {},
+            'SEVERE_TOXICITY':{},
+            'IDENTITY_ATTACK':{},
+            'INSULT':{},
+            'PROFANITY':{},
+            'THREAT':{}
+            },
+            'doNotStore': True
         }
 
         response = client.comments().analyze(body=analyze_request).execute()
@@ -44,9 +51,9 @@ def get_data_from_form():
 
         result_from_json = response['attributeScores']['TOXICITY']['summaryScore']['value']
 
-        result_to_percentage = result_from_json * 100
+        result_to_percentage = math.ceil(result_from_json * 100)
 
-       
+
         return render_template('index.html', result=result_to_percentage, comment_to_rate=comment_to_rate)
 
 
