@@ -1,3 +1,5 @@
+from http.client import ResponseNotReady
+from unittest import result
 from urllib import request
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
@@ -30,11 +32,6 @@ def get_data_from_form():
         static_discovery=False,
         )
 
-        # analyze_request = {
-        # 'comment': { 'text': 'friendly greetings from python' },
-        # 'requestedAttributes': {'TOXICITY': {}}
-        # }
-
         analyze_request = {
             'comment': {'text': 'request.form'},
             'requestedAttributes': {'TOXICITY': {}}
@@ -43,8 +40,12 @@ def get_data_from_form():
         response = client.comments().analyze(body=analyze_request).execute()
         print(json.dumps(response, indent=2))
 
-        result = response
-        return render_template('index.html', result=result)
+        result_from_json = response['attributeScores']['TOXICITY']['summaryScore']['value']
+
+        result_to_percentage = result_from_json * 100
+
+       
+        return render_template('index.html', result=result_to_percentage)
 
 
 
