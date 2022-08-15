@@ -30,20 +30,18 @@ def get_data_from_form():
         static_discovery=False,
         )
 
-        comment_to_rate = request.form
-        print(request.form)
-        print(comment_to_rate)
+        comment_to_rate = request.form['input']
+       
 
         analyze_request = {
             'comment': {'text': 'comment_to_rate'},
             'requestedAttributes': {'TOXICITY': {},
-            'SEVERE_TOXICITY':{},
-            'IDENTITY_ATTACK':{},
-            'INSULT':{},
-            'PROFANITY':{},
-            'THREAT':{}
+            # 'SEVERE_TOXICITY':{},
+            # 'IDENTITY_ATTACK':{},
+            # 'INSULT':{},
+            # 'PROFANITY':{},
+            # 'THREAT':{}
             },
-            'doNotStore': True
         }
 
         response = client.comments().analyze(body=analyze_request).execute()
