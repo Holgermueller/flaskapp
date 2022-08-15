@@ -12,7 +12,7 @@ def config():
 
 config()
 
-api_key = os.getenv('api_key')
+API_KEY = os.getenv('api_key')
 
 @app.route('/', methods=['GET'])
 def hello():
@@ -21,20 +21,18 @@ def hello():
 @app.route('/', methods=['POST'])
 def get_data_from_form():
     if request.method == 'POST':
-
         client = discovery.build(
         "commentanalyzer",
         "v1alpha1",
-        developerKey=api_key,
+        developerKey=API_KEY,
         discoveryServiceUrl="https://commentanalyzer.googleapis.com/$discovery/rest?version=v1alpha1",
         static_discovery=False,
         )
 
         comment_to_rate = request.form['input']
        
-
         analyze_request = {
-            'comment': {'text': 'comment_to_rate'},
+            'comment': {'text': comment_to_rate},
             'requestedAttributes': {'TOXICITY': {},
             # 'SEVERE_TOXICITY':{},
             # 'IDENTITY_ATTACK':{},
