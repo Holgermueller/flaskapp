@@ -8,12 +8,14 @@ body {
   width: 55%;
   margin: auto;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
 .input-form-section,
 .results-section {
-  width: 55%;
+  width: 95%;
   margin: 16px auto;
-}
-.input-form-section {
   background-color: #f2f2f2;
   padding: 20px 10px;
   border-radius: 5px;
@@ -50,7 +52,6 @@ body {
   height: 100%;
   position: absolute;
   box-sizing: border-box;
-  border-left: 4px solid green;
 }
 span {
   text-align: center;
