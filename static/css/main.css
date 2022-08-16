@@ -37,20 +37,25 @@ body {
   color: #f2f2f2;
   cursor: pointer;
 }
-.progress-background {
-  background-color: #fafafa;
+.scores {
+  width: 95%;
+  margin: 0 auto;
+}
+.score {
+  background: #fafafa;
   margin: 10px auto;
   position: relative;
-  border-radius: 5px;
-  height: 25px;
 }
-.progress {
+.single-score {
   height: 100%;
+  position: absolute;
   box-sizing: border-box;
-  border-radius: 5px;
-  background-color: #33b2ff;
-  width: 35%;
-  height: 25px;
+  border-left: 4px solid green;
+}
+span {
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
 }
 footer {
   border: 1px solid #696969;

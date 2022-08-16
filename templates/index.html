@@ -38,9 +38,55 @@
 
     <section class="results-section">
       <h4>Your comment: {{comment_to_rate}}</h4>
-      <h4>Toxicity Rating: {{result}}</h4>
-      <div class="progress-background">
-        <div class="progress"></div>
+
+      <div class="scores">
+        <div class="score">
+          <div
+            class="single-score"
+            style=" width:`${{toxicity_result}}% ||0`; color: rgba(69, 196, 150, 0.2); "
+          ></div>
+          <span>Toxicity Rating: {{toxicity_result}}%</span>
+        </div>
+
+        <div class="score">
+          <div
+            class="single-score"
+            style=" width:`${{result}}% ||0`; color: rgba(69, 196, 150, 0.2); "
+          ></div>
+          <span>Severe Toxicity Rating: {{severe_result}}%</span>
+        </div>
+
+        <div class="score">
+          <div
+            class="single-score"
+            style=" width:`${{result}}% ||0`; color: rgba(69, 196, 150, 0.2); "
+          ></div>
+          <span>Identity Attack Rating: {{identity_result}}%</span>
+        </div>
+
+        <div class="score">
+          <div
+            class="single-score"
+            style=" width:`${{result}}% ||0`; color: rgba(69, 196, 150, 0.2); "
+          ></div>
+          <span>Insult Rating: {{insult_result}}%</span>
+        </div>
+
+        <div class="score">
+          <div
+            class="single-score"
+            style=" width:`${{result}}% ||0`; color: rgba(69, 196, 150, 0.2); "
+          ></div>
+          <span>Profanity Rating: {{profanity_result}}%</span>
+        </div>
+
+        <div class="score">
+          <div
+            class="single-score"
+            style=" width:`${{result}}% ||0`; color: rgba(69, 196, 150, 0.2); "
+          ></div>
+          <span>Threat Rating: {{threat_result}}%</span>
+        </div>
       </div>
     </section>
 
