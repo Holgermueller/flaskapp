@@ -1,30 +1,46 @@
 <script>
-	export let name;
+  export let name;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <header>
+    <h1>PassGen</h1>
+  </header>
+
+  <div class="form">Input goes here</div>
+
+  <div class="output">output goes here</div>
+
+  <footer>
+    <h4>&copy; 2022 Holger Mueller</h4>
+  </footer>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  main {
+    text-align: center;
+    margin: 0 auto;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  header {
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  h1 {
+    color: #ff3e00;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 100;
+  }
+
+  footer {
+    background-color: #ff3e00;
+    color: white;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+  }
 </style>
