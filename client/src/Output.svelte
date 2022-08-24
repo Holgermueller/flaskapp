@@ -34,5 +34,6 @@
     background-color: inherit;
     float: right;
     margin-right: 8px;
+    position: relative;
   }
 </style>

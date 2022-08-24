@@ -38,9 +38,6 @@
     margin: 8px auto;
     border-radius: 5px;
   }
-  input[type="number"] {
-    text-align: right;
-  }
 
   small {
     text-align: left;
