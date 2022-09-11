@@ -13,7 +13,7 @@ h1 {
 }
 
 .thought-container {
-  width: fit-content;
+  width: 85%;
   border: 1px solid black;
   margin: 16px auto;
   padding: 16px;
