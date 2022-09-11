@@ -1,19 +1,13 @@
-from flask import Flask, send_from_directory, request
-import random
-import string
+from flask import Flask, render_template
+# import random
+# import string
 
 app = Flask(__name__)
 
 
-@app.route("/", methods=['GET'], ['POST'])
+@app.route("/", methods=['GET'])
 def base():
-    return send_from_directory('client/public', 'index.html')
-    if request
-
-@app.route("/<path:path>")
-def home(path):
-    return send_from_directory('client/public', path)
-
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
